@@ -1,4 +1,13 @@
-buildPlugin(configurations: [
-        [ platform: "windows", jdk: "11", jenkins: null ],
-        [ platform: "linux", jdk: "11", jenkins: null ]
-])
+pipeline {
+    agent any
+    stages {
+        stage('Detect language') {
+            steps {
+                step([$class: 'LanguageDetector', personalToken: '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', repoURL: 'https://github.com/shaN480/devO' ])
+            }
+            
+        
+        }
+        
+    }
+}
